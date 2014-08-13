@@ -32,8 +32,7 @@ The tidy data set is saved in a space-separated text file, with the first row as
 
 The output can be read back with:
 
-
-```r
+```{r eval=FALSE}
 tidy <- read.table('tidy.txt', header=T)
 ```
 
