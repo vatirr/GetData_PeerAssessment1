@@ -3,7 +3,7 @@
 mdfiles = CodeBook.md README.md
 
 %.md: %.Rmd
-	/usr/bin/Rscript -e "library(knitr); knit(\"$<\")"
+	Rscript -e "library(knitr); knit(\"$<\")"
 	rm -f $(<:.Rmd=.html)
 
 all: tidy.txt $(mdfiles)
