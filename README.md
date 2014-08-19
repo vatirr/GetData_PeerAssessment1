@@ -1,6 +1,8 @@
 Analysis of the UCI HAR Dataset
 ===============================
 
+The following three sections outline the steps carried out in [run_analysis.R](run_analysis.R) to analyze the [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
 Phase 1: Loading
 ----------------
 
@@ -17,7 +19,7 @@ Phase 2: Processing
 
 1. `rbind` is used to merge the data from test and training sets.
 
-2. A regular expression is used to select the columns to keep in the analysis, together with the first two columns (activity and subject). See the code book for rationales.
+2. A regular expression is used to select the columns to keep in the analysis, together with the first two columns (activity and subject). See the [code book](CodeBook.md) for rationales.
 
 3. The `factor` with the activity levels read before is applied as descriptive labels to the activity column.
 
@@ -37,3 +39,11 @@ The output can be read back with:
 tidy <- read.table('tidy.txt', header=T)
 ```
 
+Makefile
+========
+
+This project also has a makefile which, on systems which support it, takes care of
+
+* Downloading `Dataset.zip` from the web;
+* Running [run_analysis.R](run_analysis.R);
+* Generating markdown files from `.Rmd` source.
